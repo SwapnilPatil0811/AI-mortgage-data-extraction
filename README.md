@@ -1,59 +1,56 @@
 # AI-mortgage-data-extraction
-This project demonstrates an AI-powered pipeline that extracts structured information from scanned mortgage PDFs.
+🏦 Overview
 
-Most mortgage documents are scanned images, making data entry slow and error-prone. This solution combines OCR (Tesseract), Regex parsing, and Google Gemini LLM to deliver accurate, structured JSON outputs from raw PDFs.
+This project automates the extraction of critical mortgage information from scanned PDF documents.
+Manually handling mortgage files is slow, error-prone, and not scalable. With this system, we combine OCR (Optical Character Recognition) and AI-powered parsing to automatically extract borrower, loan, and lender details into a structured JSON format.
 
-✨ Key Highlights
+⚡ Key Features
 
-Handles multiple PDFs at once 📂
+🔍 OCR Integration → Uses Tesseract OCR to convert scanned PDFs into text.
 
-Extracts borrowers, loan details, lender, broker, and originator info
+📑 Multi-page Support → Extracts data from PDFs with 1 page or 100+ pages.
 
-Hybrid approach → OCR + Regex + LLM fallback for higher accuracy
+🤖 Hybrid Pipeline → Regex for quick detection, Gemini AI fallback for missing details.
 
-Output is stored in clean JSON format, ready for databases or downstream apps
+📊 Structured Output → Final results saved as clean JSON.
 
-Designed to be scalable for enterprise use cases
+📂 Batch Processing → Supports one or multiple PDFs in a single run.
 
-🔍 Extracted Fields
+🏢 Scalable Design → Enterprise-ready architecture to process large datasets.
 
-Borrowers (names + relationships)
+📂 Extracted Fields
 
-Loan amount
+The pipeline extracts the following information from mortgage documents:
 
-Recording date & location
+👤 Borrowers (names + relationship)
 
-Lender name & NMLS ID
+💰 Loan Amount
 
-Broker name (if available)
+📅 Recording Date
 
-Loan originator name & NMLS ID
+🏛 Recording Location (County Clerk)
 
-⚙️ Tech Stack
+🏦 Lender Name
 
-Python 🐍
+🆔 Lender NMLS ID
 
-Tesseract OCR (text extraction from scanned pages)
+🧑‍💼 Broker Name (if available)
 
-LangChain + Gemini API (AI-powered extraction)
+👨‍💼 Loan Originator Name
 
-Regex (fast rule-based matching)
+🆔 Loan Originator NMLS ID
 
-🚀 How It Works
-
-Upload PDF(s) → system runs OCR on every page
-
-Regex extracts known fields
-
-AI (Gemini) fills missing details
-
-Final result saved as a single JSON file
-
-📊 Sample JSON Output
+🖥️ Sample JSON Output
 {
   "borrowers": [
-    { "name": "ELIZABETH HOWERTON", "relationship": "Spouse" },
-    { "name": "TRAVIS HOWERTON", "relationship": "Spouse" }
+    {
+      "name": "ELIZABETH HOWERTON",
+      "relationship": "Spouse"
+    },
+    {
+      "name": "TRAVIS HOWERTON",
+      "relationship": "Spouse"
+    }
   ],
   "loan_amount": "$475950.00",
   "recording_date": "04/01/2025",
@@ -65,12 +62,59 @@ Final result saved as a single JSON file
   "loan_originator_nmls_id": 65175
 }
 
-🌍 Real-World Impact
+⚙️ Tech Stack
 
-Reduces manual data entry time ⏳
+Python 3.11+
 
-Improves accuracy in mortgage processing ✅
+Tesseract OCR → Text extraction from scanned PDFs
 
-Scales to handle hundreds of PDFs daily
+LangChain + Google Gemini AI → AI fallback for unstructured fields
 
-Saves cost for lenders, brokers, and enterprises 💡
+Regex → Rule-based text matching for accuracy
+
+pdf2image → PDF to image conversion
+
+📌 Workflow
+
+Upload one or multiple mortgage PDFs
+
+OCR converts each page into text
+
+Regex extracts structured fields
+
+Missing fields auto-filled using Gemini AI
+
+Final results stored as JSON files
+
+🚀 Future Enhancements
+
+Cloud deployment (AWS/GCP) for enterprise scale
+
+Web dashboard to upload & track PDF processing
+
+Database integration (MongoDB / PostgreSQL)
+
+REST API for fintech integration
+
+Advanced NLP for relationship detection
+
+🎯 Why This Matters
+
+⏳ Saves time → Automates a task that takes hours manually
+
+✅ Reduces errors → AI ensures accuracy in key legal/financial data
+
+📈 Scalable → Can handle 1 or 1000 PDFs
+
+💼 Business impact → Useful for banks, mortgage companies, legal firms, HR & compliance teams
+
+📖 Conclusion
+
+As a Data Scientist, I designed this system to demonstrate how AI + OCR can transform real-world document processing.
+This project highlights my ability to:
+
+Understand a business problem
+
+Build a technical pipeline (OCR + AI + Regex)
+
+Deliver enterprise-ready, scalable, and accurate solutions
