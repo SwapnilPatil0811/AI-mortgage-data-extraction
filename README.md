@@ -110,7 +110,7 @@ Advanced NLP for relationship detection
 
 📖 Conclusion
 
-As a Data Scientist, I designed this system to demonstrate how AI + OCR can transform real-world document processing.
+As a Data Analyst, I designed this system to demonstrate how AI + OCR can transform real-world document processing.
 This project highlights my ability to:
 
 Understand a business problem
